@@ -1,0 +1,81 @@
+/*
+ * Filename: README
+ * Author: Shengkai He
+ * Userid: cs30xcy
+ * Description: README file
+ * Date: Mar 14 2017
+ * Sources of Help: NONE
+ */
+
+
+Description
+-----------
+This program takes in one or more input files, merges all the lines from 
+each file, and prints either the duplicate lines or the distinct lines to 
+stdout. Users can specify the order in which the files are sorted and 
+merged, and display a count of how many times each line occurred.
+
+How to compile
+--------------
+Make sure you are in 'pa4' directory then type 'make'
+
+How to run
+----------
+To run the program, make sure you are in 'pa4' directory then type the
+executable name followed by the flags and filenames. For example:
+./pa4 -t file1 file2
+
+Normal Output:
+---------------
+[cs30xyz@ieng9]:pa4$ cat filea
+this is the first line of file a
+filea and fileb have the same second line
+this is the third line of file a
+FILEA AND FILEB HAVE THE SAME FOURTH LINE IGNORING CASE 
+[cs30xyz@ieng9]:pa4$ cat fileb
+this is the first line of file b
+filea and fileb have the same second line
+this is the third line of file b
+filea and fileb have the same fourth line 
+[cs30xyz@ieng9]:pa4$ ./pa4 filea fileb
+this is the first line of file a
+this is the first line of file b
+filea and fileb have the same second line
+this is the third line of file a
+this is the third line of file b
+FILEA AND FILEB HAVE THE SAME FOURTH LINE IGNORING CASE 
+filea and fileb have the same fourth line ignoring case
+
+Abnormal output
+---------------
+[cs30xyz@ieng9]:pa4$ ./pa4 -ud
+Mutually exclusive options were given.
+Usage: ./pa4 [-d|-u] [-cirst] [inputfiles]
+       ./pa4 -h for long help
+[cs30xyz@ieng9]:pa4$
+
+
+Testing
+-------
+I wrote unit tests for each function in milestone. To test timeCompare and
+revTimeComare, I created two files with different modification time, and 
+another two files with the same modification time, then passed them into
+the function see if it returns right value. For filenameCompare and
+revFilenameCompare I did the similar thing, creating several different 
+files with different names and passed them into the function then compare
+the result to the expected result. For sortFiles, I modified it upon waht
+has been given, by writing a helper testing function runTest(), then 
+created several different files with different names and passed them in
+see if the function can sort them into the right sequence.
+
+
+Questions
+---------
+1. How can you encourage your peers to act with integrity, especially when they
+ask for your help an assignment?
+I could inform them the consequences if they violate the integrity. Also I 
+could tell them how big companies value integrity as an employee. It is about
+the entire career so no mistake is allowed.
+
+
+
